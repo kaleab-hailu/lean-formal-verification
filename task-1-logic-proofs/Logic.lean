@@ -7,6 +7,7 @@ theorem T51 (h1 : P) (h2 : P → Q) : P ∧ Q := by
   constructor -- needed to construct a proof of a conjunction (P ∧ Q) in Lean. The constructor tactic allows us to provide the individual components of the conjunction separately.
   · exact h1
   · exact h2 h1
+
 theorem T52 (h1 : P ∧ Q → R) (h2 : Q → P) (h3 : Q) : R := by
   · exact h1 ⟨h2 h3, h3⟩
 
