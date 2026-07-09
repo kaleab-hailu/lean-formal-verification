@@ -14,7 +14,7 @@ Lean 4 Implementation
 
 The function safeDivide, when taking arguments a and b, requires a proof that the denominator is not zero (b ≠ 0) before the function can be called.
 
-If the denominator is 0, the proof 0≠0 cannot exist. So, Lean rejects any attempt to call safeDivide with zero denominator during compliation. As a result, the program cannot even be built if such an invalid call exists.
+If the denominator is 0, the proof 0≠0 cannot exist. So, Lean rejects any attempt to call safeDivide with zero denominator during compilation. As a result, the program cannot even be built if such an invalid call exists.
 
 Additionally, we proved a second property, safeDivide_correct, showing that for any valid a and b, the result of division multiplied back by b never exceeds a. A guarantee that holds for all possible inputs simultaneously, not just the specific cases we happened to test.
 

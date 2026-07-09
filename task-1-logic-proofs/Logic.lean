@@ -3,8 +3,8 @@
 namespace Exercises
 variable (A B C D I L M P Q R : Prop) --all the variables of type propositions are hoisted here so no need of redeclaring
 theorem T51 (h1 : P) (h2 : P → Q) : P ∧ Q := by
- -- · exact ⟨h1, h2 h1 ⟩ -- The proof of P is given by h1, and the proof of Q is obtained by applying h2 to h1.
-  constructor -- needed to construct a proof of a conjunction (P ∧ Q) in Lean. The constructor tactic allows us to provide the individual components of the conjunction separately.
+ -- · exact ⟨h1, h2 h1 ⟩
+  constructor
   · exact h1
   · exact h2 h1
 
@@ -39,6 +39,10 @@ theorem T57 (h1 : P ∨ (Q ∧ R)) : P ∨ Q := by
 theorem T58 (h1 : (L ∧ M) → ¬P) (h2 : I → P) (h3 : M) (h4 : I) : ¬L := by
   intro hl
   exact h1 ⟨hl, h3⟩ (h2 h4)
+  -- have hlm : L ∧ M := ⟨hl, h3⟩
+  -- have hnp : ¬P := h1 hlm
+  -- have hp : P := h2 h4
+  -- exact hnp hp
 
 theorem T59 : P → P := by
   intro hp
